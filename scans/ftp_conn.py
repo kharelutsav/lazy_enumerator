@@ -13,6 +13,5 @@ def ftp_conn(target):
     with open('21.txt', 'a') as ftp:
         ftp.write('\n\n [ FTP SCAN ] directory listing \n\n')
         ftp.write(conn.pwd())
-        ftp.write(conn.dir())
 
     # ftp_contorller()
