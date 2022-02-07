@@ -20,7 +20,7 @@ class Controller:
         subprocess.call(command, shell=True)
 
     def web(self):
-        http(self.target)
+        http(self.target, self.tools.web_tool, self.wordlists.web_wordlist)
         nikto(self.target)
         https(self.target)
 
