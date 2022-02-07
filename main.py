@@ -6,20 +6,23 @@ from multiprocessing import Process
 import sys
 import subprocess
 from controller import controller
+import test
 
 ###############################################################################
 
 
 class Main:
-    def __init__(self, ports, target):
+    def __init__(self, ports, target, wordlists, tools):
         self.ports = ports
         self.target = target
         self.open_ports = []
+        self.wordlists = wordlists
+        self.tools = tools
 
     def serviceScan(self, port):
         command = f"nmap -sVC -p {port} -T4 {self.target} > ./{port}.txt"
         subprocess.call(command, shell=True)
-        controller(self.target, port)
+        controller(self.target, port, wordlists, tools)
         # print(f"Port {port} open in {self.target}")
         # print(f"Starting nmap scan at port {port} \n")
 
@@ -54,6 +57,11 @@ class Main:
 
 
 if __name__ == '__main__':
+
+    args = test.Parse_Arguments()
+    wordlists = args.wordlists
+    tools = args.tools
+
     ports = [21,22,23,25,80,88,110,111,137,138,139,443,445,668,1000]
     target = '127.0.0.1'
     start_time = datetime.now()
@@ -65,7 +73,7 @@ if __name__ == '__main__':
     print("Scan started at: " + str(start_time))
     print("-" * 50)
 
-    main = Main(ports, target)
+    main = Main(ports, target, wordlists, tools)
     main.runner()
 
     end_time = datetime.now()

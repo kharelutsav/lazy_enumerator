@@ -9,9 +9,11 @@ from scans.smbclient import smbclient
 from scans.showmount import showmount
 
 class Controller:
-    def __init__(self, port, target):
+    def __init__(self, port, target, wordlists, tools):
         self.port = port
         self.target = target
+        self.wordlists = wordlists
+        self.tools = tools
 
     def nmap(self):
         command = f"nmap -sVC -p {self.port} -T4 {self.target}"

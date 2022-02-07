@@ -1,4 +1,4 @@
-Starting Nmap 7.92 ( https://nmap.org ) at 2022-01-23 17:23 Nepal Standard Time
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-02-07 17:48 Nepal Standard Time
 Nmap scan report for kubernetes.docker.internal (127.0.0.1)
 Host is up (0.00s latency).
 
@@ -10,8 +10,8 @@ Host script results:
 |   3.1.1: 
 |_    Message signing enabled but not required
 | smb2-time: 
-|   date: 2022-01-23T11:38:25
+|   date: 2022-02-07T12:03:58
 |_  start_date: N/A
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 21.83 seconds
+Nmap done: 1 IP address (1 host up) scanned in 21.23 seconds
