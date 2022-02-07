@@ -1,4 +1,7 @@
-import subprocess
+import ftplib
+from scans.ftp_controller import ftp_contorller
+
+conn = ftplib.FTP()
 
 def ftp_conn(target):
 

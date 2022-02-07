@@ -1,4 +1,5 @@
 import ftplib
+conn = ftplib.FTP()
 
 def ftp_contorller():
     print("\nDo u wanna dowload file or change directory\n")

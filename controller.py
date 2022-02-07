@@ -8,32 +8,32 @@ from scans.enum4linux import enum4linux
 from scans.smbclient import smbclient
 from scans.showmount import showmount
 
-class Controller:
-    def __init__(self, port, target, wordlists, tools):
-        self.port = port
-        self.target = target
-        self.wordlists = wordlists
-        self.tools = tools
+# class Controller:
+#     def __init__(self, port, target, wordlists, tools):
+#         self.port = port
+#         self.target = target
+#         self.wordlists = wordlists
+#         self.tools = tools
 
-    def nmap(self):
-        command = f"nmap -sVC -p {self.port} -T4 {self.target}"
-        subprocess.call(command, shell=True)
+#     def nmap(self):
+#         command = f"nmap -sVC -p {self.port} -T4 {self.target}"
+#         subprocess.call(command, shell=True)
 
-    def web(self):
-        http(self.target, self.tools.web_tool, self.wordlists.web_wordlist)
-        nikto(self.target)
-        https(self.target)
+#     def web(self):
+#         http(self.target, self.tools.web_tool, self.wordlists.web_wordlist)
+#         nikto(self.target)
+#         https(self.target)
 
-    def ftp(self):
-        ftp_conn(self.target)
+#     def ftp(self):
+#         ftp_conn(self.target)
 
-    def ssh():
-        print("SSH brute forcing using hydra!!!!   HAIL HYDRA....")
+#     def ssh():
+#         print("SSH brute forcing using hydra!!!!   HAIL HYDRA....")
 
-    def samba(self):
-        enum4linux(self.target)
-        smbclient(self.target)
-        showmount(self.target)
+#     def samba(self):
+#         enum4linux(self.target)
+#         smbclient(self.target)
+#         showmount(self.target)
 
 def controller(target, port, wordlists, tools):
     if port == 80:
