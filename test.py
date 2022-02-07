@@ -11,6 +11,8 @@ class Parse_Arguments:
         for i in range(len(argv)):
             if argv[i] == '--dir_wl':
                 self.wordlists['web_wordlist'] = argv[i + 1]
+            if argv[i] == '--ssh-user-bf':
+                self.wordlists['ssh_user'] = argv[i + 1]
             if argv[i] == '--dir_t':
                 self.tools['web_tool'] = argv[i + 1]
             if argv[i] == '--sub_domain_wl':
@@ -23,8 +25,3 @@ class Parse_Arguments:
                         text = i[0:-1]
                         print(text)
                     exit(0)
-
-tools = Parse_Arguments().tools
-wordlists = Parse_Arguments().wordlists
-
-# C:/Python310/python.exe c:/Users/Killion/Desktop/lazy_enumerator/test.py --dir_wl /hello/fuck --dir_t what --sub_domain_wl haha --sub_domain_t stop

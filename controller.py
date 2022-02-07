@@ -2,7 +2,6 @@ import subprocess
 from scans.ssh_bf import ssh_bf
 from scans.http import http
 from scans.https import https
-from scans.nikto import nikto
 from scans.ftp_conn import ftp_conn
 from scans.enum4linux import enum4linux
 from scans.smbclient import smbclient
@@ -21,7 +20,6 @@ from scans.showmount import showmount
 
 #     def web(self):
 #         http(self.target, self.tools.web_tool, self.wordlists.web_wordlist)
-#         nikto(self.target)
 #         https(self.target)
 
 #     def ftp(self):
@@ -38,14 +36,12 @@ from scans.showmount import showmount
 def controller(target, port, wordlists, tools):
     if port == 80:
         http(target, tools['web_tool'], wordlists['web_wordlist'])
-        nikto(target)
     elif port == 443:
         https(target)
-        nikto(target)
     elif port == 21:
         ftp_conn(target)
-    elif port == 22:
-        ssh_bf(target)
+    elif port == 22 and wordlists['ssh_user']:
+        ssh_bf(target, wordlists['ssh_user'])
     elif port == 443:
         enum4linux(target)
         smbclient(target)
