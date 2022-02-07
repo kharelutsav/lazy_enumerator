@@ -35,10 +35,9 @@ class Controller:
         smbclient(self.target)
         showmount(self.target)
 
-def controller(target, port):
-    controller = Controller(port, target)
+def controller(target, port, wordlists, tools):
     if port == 80:
-        http(target)
+        http(target, tools['web_tool'], wordlists['web_wordlist'])
         nikto(target)
     elif port == 443:
         https(target)

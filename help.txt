@@ -1,0 +1,46 @@
+ _        _     _______   __
+| |      / \   |__  /\ \ / /
+| |     / _ \    / /  \ V /
+| |___ / ___ \  / /_   | |
+|_____/_/   \_\/____|  |_|
+
+ _____ _   _ _   _ __  __ _____ ____      _  _____ ___  ____
+| ____| \ | | | | |  \/  | ____|  _ \    / \|_   _/ _ \|  _ \
+|  _| |  \| | | | | |\/| |  _| | |_) |  / _ \ | || | | | |_) |
+| |___| |\  | |_| | |  | | |___|  _ <  / ___ \| || |_| |  _ <
+|_____|_| \_|\___/|_|  |_|_____|_| \_\/_/   \_\_| \___/|_| \_\
+
+
+--dir_wl    :wordlists to perform directory enumeration
+
+--dir_t     [ dirsearch, gobuster, ffuf ]
+            :tool to perform directory enumeration
+
+Examples:
+    app --dir_wl /path/to/wordlists --dir_t preferred_tool_name
+
+For Help:
+    app --help
+    app -h
+
+Lazy Enumerator is a tool developed by college students. Although this tool
+is under MIT lisence, only those geeks lazy enough to type their own command
+are eligible to use this tool. This tools performs active enumeration/reconniesence
+on the website making the use of evergreen tools.
+Tools combined:
+    Nmap
+    gobuster
+    dirsearch
+    ffuz
+
+This tool is under development and will be maintained as for now. We might even
+get to see the web based version of this tool in the near future. So tuned in.
+
+Aurthors: Anish, Anup, Manik, Muskan, Utsav
+Techical Review: Utsav
+
+        ********************************************************
+                    To contribute for the project:
+                        Email me.
+                        We accept only Bitcoins.
+        ********************************************************

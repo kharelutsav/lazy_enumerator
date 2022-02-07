@@ -17,10 +17,14 @@ class Parse_Arguments:
                 self.wordlists['subdomoain_wordlist'] = argv[i + 1]
             if argv[i] == '--sub_domain_t':
                 self.tools['subdomain_tool'] = argv[i + 1]
+            if argv[i] == '--help' or argv[i] == '-h':
+                with open('help.txt', 'r') as help:
+                    for i in help.readlines():
+                        text = i[0:-1]
+                        print(text)
+                    exit(0)
 
 tools = Parse_Arguments().tools
 wordlists = Parse_Arguments().wordlists
-print(tools)
-print(wordlists)
 
 # C:/Python310/python.exe c:/Users/Killion/Desktop/lazy_enumerator/test.py --dir_wl /hello/fuck --dir_t what --sub_domain_wl haha --sub_domain_t stop
