@@ -11,10 +11,12 @@
 |_____|_| \_|\___/|_|  |_|_____|_| \_\/_/   \_\_| \___/|_| \_\
 
 
---dir_wl    :wordlists to perform directory enumeration
+--dir_wl        : wordlists to perform directory enumeration
 
---dir_t     [ dirsearch, gobuster, ffuf ]
-            :tool to perform directory enumeration
+    --dir_t     [ dirsearch, gobuster, ffuf ]
+                : tool to perform directory enumeration
+
+--ssh-user-bf   : provide ssh username for ssh bruteforce
 
 Examples:
     app --dir_wl /path/to/wordlists --dir_t preferred_tool_name

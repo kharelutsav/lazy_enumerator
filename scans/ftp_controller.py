@@ -2,11 +2,6 @@ import ftplib
 conn = ftplib.FTP()
 
 def ftp_contorller():
-    print("\nDo u wanna dowload file or change directory\n")
-    print("If u wanna download file enter [1] else [2] for change directory and [3] to ignore ftp")
-
-    while True:
-        usr_choice = int(input("Enter ur choice : "))
         if usr_choice == 1:
             filename = input("Enter the file name to download: ")
             try:

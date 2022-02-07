@@ -40,7 +40,7 @@ def controller(target, port, wordlists, tools):
         https(target)
     elif port == 21:
         ftp_conn(target)
-    elif port == 22 and wordlists['ssh_user']:
+    elif port == 22 and 'ssh_user' in wordlists:
         ssh_bf(target, wordlists['ssh_user'])
     elif port == 443:
         enum4linux(target)
