@@ -7,7 +7,7 @@ import sys
 import subprocess
 from controller import controller
 import test
-
+import asyncio
 ###############################################################################
 
 
@@ -22,7 +22,7 @@ class Main:
     def serviceScan(self, port):
         command = f"nmap -sVC -p {port} -T4 {self.target} > ./{port}.txt"
         subprocess.call(command, shell=True)
-        controller(self.target, port, wordlists, tools)
+        asyncio.run(controller(self.target, port, wordlists, tools))
         # print(f"Port {port} open in {self.target}")
         # print(f"Starting nmap scan at port {port} \n")
 
