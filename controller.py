@@ -1,4 +1,3 @@
-import subprocess
 from scans.ssh_bf import ssh_bf
 from scans.http import http
 from scans.https import https
@@ -33,7 +32,7 @@ from scans.showmount import showmount
 #         smbclient(self.target)
 #         showmount(self.target)
 
-def controller(target, port, wordlists, tools):
+async def controller(target, port, wordlists, tools):
     if port == 80:
         http(target, tools['web_tool'], wordlists['web_wordlist'])
     elif port == 443:
@@ -43,6 +42,6 @@ def controller(target, port, wordlists, tools):
     elif port == 22 and 'ssh_user' in wordlists:
         ssh_bf(target, wordlists['ssh_user'])
     elif port == 445:
-        enum4linux(target)
-        smbclient(target)
-        showmount(target)
+        await enum4linux(target)
+        await smbclient(target)
+        await showmount(target)

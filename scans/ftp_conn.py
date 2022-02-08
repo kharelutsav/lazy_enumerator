@@ -8,10 +8,11 @@ def ftp_conn(target):
 
     conn.connect(value, 21)
 
-    conn.login('anonymous', 'anonymous')
+    try:
+        conn.login('anonymous', 'anonymous')
 
-    with open('21.txt', 'a') as ftp:
-        ftp.write('\n\n [ FTP SCAN ] directory listing \n\n')
-        ftp.write(conn.pwd())
-
-    # ftp_contorller()
+        with open('21.txt', 'a') as ftp:
+            ftp.write('\n\n [ FTP SCAN ] directory listing \n\n')
+            ftp.write(conn.pwd())
+    except:
+        return
