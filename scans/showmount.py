@@ -1,6 +1,5 @@
 import subprocess
 
 def showmount(target):
-    command = f"showmount -e {target} \n"
-    com = subprocess.call(command, shell=True)
-    return com
+    command = f"showmount -e {target} >> showmount.txt"
+    subprocess.call(command, shell=True)

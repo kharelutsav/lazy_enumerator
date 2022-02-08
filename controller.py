@@ -42,7 +42,7 @@ def controller(target, port, wordlists, tools):
         ftp_conn(target)
     elif port == 22 and 'ssh_user' in wordlists:
         ssh_bf(target, wordlists['ssh_user'])
-    elif port == 443:
+    elif port == 445:
         enum4linux(target)
         smbclient(target)
         showmount(target)
