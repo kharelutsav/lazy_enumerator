@@ -1,3 +1,4 @@
+from ast import arg
 from concurrent.futures import ThreadPoolExecutor
 import pyfiglet
 from datetime import datetime
@@ -63,7 +64,7 @@ if __name__ == '__main__':
     tools = args.tools
 
     ports = [21,22,23,25,80,88,110,111,137,138,139,443,445,668,1000]
-    target = '127.0.0.1'
+    target = args.target['ip'] if 'ip' in args.target else args.target['domain']
     start_time = datetime.now()
     # Add Banner
     ascii_banner = pyfiglet.figlet_format("LAZY ENUMERATOR")

@@ -5,7 +5,17 @@ class Parse_Arguments:
     def __init__(self):
         self.tools = {'web_tool': 'gobuster', 'subdomain_tool': 'default'}
         self.wordlists = {'web_wordlist': '/usr/share/dirb/wordlists/common.txt', 'subdomoain_wordlist': 'default'}
+        self.target = {}
         self.parse()
+        if len(self.target) == 0:
+            print("\
+    \n!!!!!!!!! Target not specified !!!!!!!!!!\n\n\
+Examples:\n\
+    app --ip 127.0.0.1\n\
+    app --domain example.com --dir_wl /path/to/wordlists --dir_t preferred_tool_name\n\
+                ")
+            exit(2)
+
 
     def parse(self):
         for i in range(len(argv)):
@@ -25,3 +35,7 @@ class Parse_Arguments:
                         text = i[0:-1]
                         print(text)
                     exit(0)
+            if argv[i] == '--ip':
+                self.target['ip'] = argv[i + 1]
+            elif argv[i] == '--domain':
+                self.target['domain'] = argv[i + 1]

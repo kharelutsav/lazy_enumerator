@@ -11,15 +11,24 @@
 |_____|_| \_|\___/|_|  |_|_____|_| \_\/_/   \_\_| \___/|_| \_\
 
 
---dir_wl        : wordlists to perform directory enumeration
+--ip ip
+        : IP address
 
-    --dir_t     [ dirsearch, gobuster, ffuf ]
-                : tool to perform directory enumeration
+--domain string
+        :Domain name
 
---ssh-user-bf   : provide ssh username for ssh bruteforce
+--dir_wl wordlist
+        : wordlists to perform directory enumeration
+
+--dir_t string      [ dirsearch, gobuster, ffuf ]
+        : tool to perform directory enumeration
+
+--ssh-user-bf
+        : provide ssh username for ssh bruteforce
 
 Examples:
-    app --dir_wl /path/to/wordlists --dir_t preferred_tool_name
+    app --ip 127.0.0.1
+    app --domain example.com --dir_wl /path/to/wordlists --dir_t preferred_tool_name
 
 For Help:
     app --help
