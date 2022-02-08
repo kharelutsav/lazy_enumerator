@@ -15,6 +15,14 @@ Examples:\n\
     app --domain example.com --dir_wl /path/to/wordlists --dir_t preferred_tool_name\n\
                 ")
             exit(2)
+        elif len(self.target) > 1:
+            print("\
+    \n!!!!!!!!! Please provide one of ip address or domain name !!!!!!!!!!\n\n\
+Examples:\n\
+    app --ip 127.0.0.1\n\
+    app --domain example.com --dir_wl /path/to/wordlists --dir_t preferred_tool_name\n\
+                ")
+            exit(2)
 
 
     def parse(self):

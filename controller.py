@@ -32,7 +32,7 @@ from scans.showmount import showmount
 #         smbclient(self.target)
 #         showmount(self.target)
 
-async def controller(target, port, wordlists, tools):
+def controller(target, port, wordlists, tools):
     if port == 80:
         http(target, tools['web_tool'], wordlists['web_wordlist'])
     elif port == 443:
@@ -42,6 +42,6 @@ async def controller(target, port, wordlists, tools):
     elif port == 22 and 'ssh_user' in wordlists:
         ssh_bf(target, wordlists['ssh_user'])
     elif port == 445:
-        await enum4linux(target)
-        await smbclient(target)
-        await showmount(target)
+        enum4linux(target)
+        smbclient(target)
+        showmount(target)
