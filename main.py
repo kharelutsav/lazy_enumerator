@@ -12,7 +12,7 @@ class extra:
         self.wordlists = args.wordlists
         self.tools = args.tools
         self.target = args.target['ip'] if 'ip' in args.target else args.target['domain']
-        self.popular_ports = [21,22,23,25,80,88,110,111,137,138,139,443,445,668,1000]
+        self.popular_ports = [21,22,23,25,53,80,88,110,111,137,138,139,143,389,443,445,636,1433,2049,3306,3389,5000,5432,5433,5601]
         self.selected_ports = []
         self.start_time = start_time
 
