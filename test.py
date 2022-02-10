@@ -1,4 +1,4 @@
- sys import argv
+from sys import argv
 
 
 class Parse_Arguments:
