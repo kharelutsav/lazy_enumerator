@@ -5,12 +5,16 @@ from scans.ftp_conn import ftp_conn
 from scans.enum4linux import enum4linux
 from scans.smbclient import smbclient
 from scans.showmount import showmount
-from from scans.sublister import sublist
+from scans.sublister import sublist
+from scans.gau import gau
 import re
 
 regey = re.compile(r"^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$")
 def controller(target, port, wordlists, tools):
-    if port == 80:
+    elif re.match(regey, target) == None:
+        sublist(target)
+        gau(target)
+    elif port == 80:
         http(target, tools['web_tool'], wordlists['web_wordlist'])
     elif port == 443:
         https(target)
@@ -22,5 +26,4 @@ def controller(target, port, wordlists, tools):
         enum4linux(target)
         smbclient(target)
         showmount(target)
-    elif re.match(regey, target) == None:
-        sublist(target)
+    
