@@ -8,7 +8,7 @@ from scans.showmount import showmount
 from from scans.sublister import sublist
 import re
 
-regey = re.compile(r"\w+\.\w+\.\w+\.\w+")
+regey = re.compile(r"^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$")
 def controller(target, port, wordlists, tools):
     if port == 80:
         http(target, tools['web_tool'], wordlists['web_wordlist'])
