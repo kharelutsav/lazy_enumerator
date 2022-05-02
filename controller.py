@@ -11,7 +11,7 @@ import re
 
 regey = re.compile(r"^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$")
 def controller(target, port, wordlists, tools):
-    elif re.match(regey, target) == None:
+    if re.match(regey, target) == None:
         sublist(target)
         gau(target)
     elif port == 80:
