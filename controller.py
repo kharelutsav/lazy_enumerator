@@ -5,33 +5,10 @@ from scans.ftp_conn import ftp_conn
 from scans.enum4linux import enum4linux
 from scans.smbclient import smbclient
 from scans.showmount import showmount
+from from scans.sublister import sublist
+import re
 
-# class Controller:
-#     def __init__(self, port, target, wordlists, tools):
-#         self.port = port
-#         self.target = target
-#         self.wordlists = wordlists
-#         self.tools = tools
-
-#     def nmap(self):
-#         command = f"nmap -sVC -p {self.port} -T4 {self.target}"
-#         subprocess.call(command, shell=True)
-
-#     def web(self):
-#         http(self.target, self.tools.web_tool, self.wordlists.web_wordlist)
-#         https(self.target)
-
-#     def ftp(self):
-#         ftp_conn(self.target)
-
-#     def ssh():
-#         print("SSH brute forcing using hydra!!!!   HAIL HYDRA....")
-
-#     def samba(self):
-#         enum4linux(self.target)
-#         smbclient(self.target)
-#         showmount(self.target)
-
+regey = re.compile(r"\w+\.\w+\.\w+\.\w+")
 def controller(target, port, wordlists, tools):
     if port == 80:
         http(target, tools['web_tool'], wordlists['web_wordlist'])
@@ -45,3 +22,5 @@ def controller(target, port, wordlists, tools):
         enum4linux(target)
         smbclient(target)
         showmount(target)
+    elif re.match(regey, target) == None:
+        sublist(target)
